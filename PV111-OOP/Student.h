@@ -6,13 +6,26 @@ using namespace std;
 class Student
 {
 
-	char name[10];
+	char* name;
 	int age;
 
 public:
-	Student()
+	Student() 
 	{
-		cout << "Constructor" << endl;
+		setName("No name");
+		setAge(0);
+	}
+
+	Student(const char* n, int a)
+	{
+		setName(n);
+		setAge(a);
+	}
+
+	~Student()
+	{
+		delete name;
+		cout << "Destructor" << endl;
 	}
 
 	void setAge(int a)
@@ -32,7 +45,9 @@ public:
 
 	void setName(const char* n)
 	{
-		strcpy_s(name, 10, n);
+		int len = strlen(n) + 1;
+		name = new char[len];
+		strcpy_s(name, len, n);
 	}
 
 	char* getName()
