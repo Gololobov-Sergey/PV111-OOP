@@ -13,16 +13,11 @@ class Student
 	int sizeMark = 0;
 
 public:
-	Student() 
-	{
-		setName("No name");
-		setAge(0);
-	}
+	Student() : Student("No name", 0) { }
 
 	Student(const char* n, int a)
 	{
-		setName(n);
-		setAge(a);
+		init(n, a);
 	}
 
 	~Student()
@@ -30,6 +25,12 @@ public:
 		delete name;
 		delete[] mark;
 		cout << "Destructor" << endl;
+	}
+
+	void init(const char* n, int a)
+	{
+		setName(n);
+		setAge(a);
 	}
 
 	void addMark(int m)
@@ -49,7 +50,7 @@ public:
 		age = a;
 	}
 
-	int getAge()
+	int getAge() const
 	{
 		return age;
 	}
@@ -61,17 +62,17 @@ public:
 		strcpy_s(name, len, n);
 	}
 
-	char* getName()
+	char* getName() const
 	{
 		return name;
 	}
 
-	void print();
+	void print() const;
 
 };
 
 
-void Student::print()
+void Student::print() const
 {
 	cout << "Name: " << name << ", Age: " << age << ", Mark: ";
 	printArray(mark, sizeMark);
