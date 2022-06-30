@@ -16,6 +16,10 @@ class PhoneBook
 
 public:
 	PhoneBook() {}
+	~PhoneBook()
+	{
+		delete[] abonents;
+	}
 	void menu();
 	void addAbonent();
 

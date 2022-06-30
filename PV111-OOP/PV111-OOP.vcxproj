@@ -128,11 +128,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Library\Functions.cpp" />
+    <ClCompile Include="..\Library\String.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\Library\Functions.h" />
     <ClInclude Include="..\Library\Menu.h" />
+    <ClInclude Include="..\Library\String.h" />
+    <ClInclude Include="Array.h" />
     <ClInclude Include="PhoneBook.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Student.h" />

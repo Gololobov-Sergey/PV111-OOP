@@ -11,15 +11,20 @@
 using namespace std;
 
 
-
 class Menu
 {
 public:
 	static int select_vertical(vector <string> menu, HorizontalAlignment ha, int y = 12)
 	{
+		HANDLE hStdOut = GetStdHandle(STD_OUTPUT_HANDLE);
+		CONSOLE_SCREEN_BUFFER_INFO start_attribute;
+		GetConsoleScreenBufferInfo(hStdOut, &start_attribute);
+		int backColor = start_attribute.wAttributes & 15;
+		int textColor = (start_attribute.wAttributes >>= 4) & 15;
 		int maxLen = 0;
 		for (size_t i = 0; i < menu.size(); i++)
 		{
+			menu[i] = " " + menu[i] + " ";
 			if (menu[i].length() > maxLen)
 				maxLen = menu[i].length();
 		}
@@ -38,49 +43,50 @@ public:
 			{
 				if (i == pos)
 				{
-					SetColor(0, 15);
+					SetColor(textColor, backColor);
 					gotoxy(x, y + i);
 					cout << setw(maxLen) << left;
 					gotoxy(x, y + i);
 					cout << menu[i] << endl;
-					SetColor(15, 0);
+					SetColor(backColor, textColor);
 				}
 				else
 				{
-					SetColor(15, 0);
+					SetColor(backColor, textColor);
 					gotoxy(x, y + i);
 					cout << setw(maxLen) << left;
 					gotoxy(x, y + i);
 					cout << menu[i] << endl;
-					SetColor(0, 15);
+					SetColor(textColor, backColor);
 				}
 			}
 			c = _getch();
 			switch (c)
 			{
-			case 72: if (pos > 0)               pos--; break;//ââåðõ
-			case 80: if (pos < menu.size() - 1) pos++; break;// âíèç
+			case 72: if (pos > 0)               pos--; break; // up
+			case 80: if (pos < menu.size() - 1) pos++; break; // down
 			case 13: break;
 			}
 		} while (c != 13);
-		SetColor(7, 0);
 
 		for (size_t i = 0; i < 2; i++)
 		{
-			SetColor(15, 0);
+			SetColor(backColor, textColor);
 			gotoxy(x, y + pos);
 			cout << setw(maxLen) << left;
 			gotoxy(x, y + pos);
 			cout << menu[pos] << endl;
-			Sleep(300);
-			SetColor(0, 15);
+			Sleep(200);
+			SetColor(textColor, backColor);
 			gotoxy(x, y + pos);
 			cout << setw(maxLen) << left;
 			gotoxy(x, y + pos);
 			cout << menu[pos] << endl;
-			SetColor(15, 0);
-			Sleep(300);
+			SetColor(backColor, textColor);
+			Sleep(200);
 		}
+		SetColor(backColor, textColor);
+		system("cls");
 		return pos;
 	}
 

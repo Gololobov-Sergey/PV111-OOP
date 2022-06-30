@@ -22,6 +22,11 @@ public:
 	int getZ() const { return z; }
 	static int getCount() { return count; }
 	void print() const;
+	void addVector(int x, int y)
+	{
+		this->x += x;
+		this->y += y;
+	}
 };
 
 

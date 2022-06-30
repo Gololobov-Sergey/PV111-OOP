@@ -3,16 +3,62 @@
 #include"Point.h"
 #include"Time.h"
 #include"PhoneBook.h"
+#include"Array.h"
+#include"../Library/String.h"
 
 using namespace std;
+
+void PRINT(String a)
+{
+	a.print();
+}
+
+
+Array foo()
+{
+	Array arr(8);
+	arr.set();
+	arr.print();
+	return arr;
+}
 
 int main()
 {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 
-	PhoneBook phonebook;
-	phonebook.menu();
+
+	////// 30.06.2022 //////////
+
+	String st;
+	String st1(50);
+	String st2("mama");
+	String st3(st2);
+
+	PRINT(st2);
+
+	//{
+
+	//	Array arr(8);
+	//	arr.set();
+	//	arr.print();
+
+	//	//1
+	//	PRINT(arr);
+	//	arr.print();
+
+	//	//2
+	//	//Array arr2(arr);
+	//	//arr.print();
+
+	//	//3
+	//	//Array arr3 = foo();
+	//	//arr3.print();
+	//}
+
+
+	//PhoneBook phonebook;
+	//phonebook.menu();
 
 
 
@@ -23,8 +69,9 @@ int main()
 	int s = Sum(a1, a2);
 
 	const int d(9);
-	
+
 	cout << Point::getCount() << endl;
+
 	const Point p1;
 	p1.print();
 	cout << Point::getCount() << endl;
@@ -40,7 +87,7 @@ int main()
 	//p2.z = 555;
 	//cout << Point::getZ() << endl;
 	//cout << p2.getZ() << endl;
-	
+
 	//Time t1;
 	//Time t2(20);
 	//Time t3(10, 20);
@@ -48,7 +95,7 @@ int main()
 
 
 	//Student student("Sergiy", 30);
-	//student.print();
+	//student.print(); // print(student)  //print(this)
 	//student.setName("Sergiy");
 	//student.setAge(25);
 	/*student.addMark(0);
@@ -64,7 +111,7 @@ int main()
 
 	/*Student st[3];
 	st[0].print();
-	
+
 
 	cout << sizeof(Student) << endl;*/
 

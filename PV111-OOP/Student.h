@@ -17,13 +17,13 @@ public:
 
 	Student(const char* n, int a)
 	{
-		init(n, a);
+		this->init(n, a);
 	}
 
 	~Student()
 	{
-		delete name;
-		delete[] mark;
+		delete this->name;
+		delete[] this->mark;
 		cout << "Destructor" << endl;
 	}
 
@@ -74,6 +74,6 @@ public:
 
 void Student::print() const
 {
-	cout << "Name: " << name << ", Age: " << age << ", Mark: ";
+	cout << "Name: " << this->name << ", Age: " << this->age << ", Mark: ";
 	printArray(mark, sizeMark);
 }
