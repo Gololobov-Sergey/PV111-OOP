@@ -1,18 +1,93 @@
 #pragma once
 #include"../Library/Menu.h"
+#include"../Library/Functions.h"
+
+
 
 class Abonent
 {
-	char* FIO;
-	char* phone;
-	char* info;
+	char* FIO = nullptr;
+	char* phone = nullptr;
+	char* info = nullptr;
+
+public:
+	Abonent() {}
+	void setFIO();
+	void setFIO(const char* fio);
+	void setPhone();
+	void setPhone(const char* phone);
+	void setInfo();
+	void setInfo(const char* info);
+	void print();
+	string toString();
 };
 
 
+void Abonent::setFIO()
+{
+	char buff[80];
+	cout << "Enter FIO: ";
+	cin.getline(buff, 80);
+	setFIO(buff);
+}
+
+void Abonent::setFIO(const char* fio)
+{
+	if (FIO)
+		delete FIO;
+	int len = strlen(fio) + 1;
+	FIO = new char[len];
+	strcpy_s(FIO, len, fio);
+}
+
+void Abonent::setPhone()
+{
+	char buff[80];
+	cout << "Enter Phone: ";
+	cin.getline(buff, 80);
+	setPhone(buff);
+}
+
+void Abonent::setPhone(const char* phone)
+{
+	if (this->phone)
+		delete this->phone;
+	int len = strlen(phone) + 1;
+	this->phone = new char[len];
+	strcpy_s(this->phone, len, phone);
+}
+
+void Abonent::setInfo()
+{
+	char buff[80];
+	cout << "Enter Info: ";
+	cin.getline(buff, 80);
+	setInfo(buff);
+}
+
+void Abonent::setInfo(const char* info)
+{
+	if (this->info)
+		delete this->info;
+	int len = strlen(info) + 1;
+	this->info = new char[len];
+	strcpy_s(this->info, len, info);
+}
+
+void Abonent::print()
+{
+	cout << setw(15) << left << FIO << setw(15) << phone << " " << info << endl;
+} 
+
+string Abonent::toString()
+{
+	return (string)FIO + " " + (string)phone + " " + (string)info;
+}
+
 class PhoneBook
 {
-	Abonent* abonents;
-	int size;
+	Abonent** abonents = nullptr;
+	int size = 0;
 
 public:
 	PhoneBook() {}
@@ -22,7 +97,9 @@ public:
 	}
 	void menu();
 	void addAbonent();
-
+	void delAbonent();
+	void print();
+	
 };
 
 void PhoneBook::menu()
@@ -34,10 +111,51 @@ void PhoneBook::menu()
 		int c = Menu::select_vertical({ "Додати", "Видалити", "Друк", "Вихід" }, HorizontalAlignment::Center, 5);
 		switch (c)
 		{
+		case 0:
+			addAbonent();
+			break;
+		case 1:
+			delAbonent();
+			break;
+		case 2:
+			print();
+			break;
 		case 3:
 			exit(0);
 		default:
 			break;
 		}
 	}
+}
+
+void PhoneBook::print()
+{
+	system("cls");
+	cout << "------ALL CONTACT------ " << endl;
+	for (size_t i = 0; i < size; i++)
+	{
+		cout << setw(4) << i + 1;
+		abonents[i]->print();
+	}
+	system("pause");
+}
+
+void PhoneBook::addAbonent()
+{
+	Abonent* abonent = new Abonent;
+	abonent->setFIO();
+	abonent->setPhone();
+	abonent->setInfo();
+	addElemArray(abonents, size, abonent);
+}
+
+void PhoneBook::delAbonent()
+{
+	vector<string> delList;
+	for (size_t i = 0; i < size; i++)
+	{
+		delList.push_back(to_string(i + 1) + abonents[i]->toString());
+	}
+	int ind = Menu::select_vertical(delList, HorizontalAlignment::Left, 2);
+	delElemArray(abonents, size, ind);
 }

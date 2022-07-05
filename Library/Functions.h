@@ -20,6 +20,23 @@ void addElemArray(T*& arr, int& size, T elem)
 }
 
 template<class T>
+void delElemArray(T*& arr, int& size, int pos)
+{
+	T* temp = new T[size - 1];
+	for (size_t i = 0; i < pos; i++)
+	{
+		temp[i] = arr[i];
+	}
+	for (size_t i = pos+1; i < size; i++)
+	{
+		temp[i-1] = arr[i];
+	}
+	size--;
+	delete[] arr;
+	arr = temp;
+}
+
+template<class T>
 void printArray(const T* arr, int size)
 {
 	for (size_t i = 0; i < size; i++)

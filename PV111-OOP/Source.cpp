@@ -30,12 +30,12 @@ int main()
 
 	////// 30.06.2022 //////////
 
-	String st;
-	String st1(50);
-	String st2("mama");
-	String st3(st2);
+	//String st;
+	//String st1(50);
+	//String st2("mama");
+	//String st3(st2);
 
-	PRINT(st2);
+	//PRINT(st2);
 
 	//{
 
@@ -57,8 +57,8 @@ int main()
 	//}
 
 
-	//PhoneBook phonebook;
-	//phonebook.menu();
+	PhoneBook phonebook;
+	phonebook.menu();
 
 
 
