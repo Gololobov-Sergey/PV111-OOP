@@ -12,6 +12,9 @@ class Abonent
 
 public:
 	Abonent() {}
+	Abonent(const Abonent& obj);
+	~Abonent();
+	Abonent& operator=(const Abonent& obj);
 	void setFIO();
 	void setFIO(const char* fio);
 	void setPhone();
@@ -22,6 +25,37 @@ public:
 	string toString();
 };
 
+
+Abonent& Abonent::operator=(const Abonent& obj)
+{
+	if (this == &obj)
+		return *this;
+
+	/*if (FIO) delete FIO;
+	if (phone) delete phone;
+	if (info) delete info;*/
+
+	setFIO(obj.FIO);
+	setPhone(obj.phone);
+	setInfo(obj.info);
+
+	return *this;
+
+}
+
+Abonent::Abonent(const Abonent& obj)
+{
+	setFIO(obj.FIO);
+	setPhone(obj.phone);
+	setInfo(obj.info);
+}
+
+inline Abonent::~Abonent()
+{
+	delete FIO;
+	delete phone;
+	delete info;
+}
 
 void Abonent::setFIO()
 {
@@ -86,7 +120,7 @@ string Abonent::toString()
 
 class PhoneBook
 {
-	Abonent** abonents = nullptr;
+	Abonent* abonents = nullptr;
 	int size = 0;
 
 public:
@@ -135,17 +169,17 @@ void PhoneBook::print()
 	for (size_t i = 0; i < size; i++)
 	{
 		cout << setw(4) << i + 1;
-		abonents[i]->print();
+		abonents[i].print();
 	}
 	system("pause");
 }
 
 void PhoneBook::addAbonent()
 {
-	Abonent* abonent = new Abonent;
-	abonent->setFIO();
-	abonent->setPhone();
-	abonent->setInfo();
+	Abonent abonent;
+	abonent.setFIO();
+	abonent.setPhone();
+	abonent.setInfo();
 	addElemArray(abonents, size, abonent);
 }
 
@@ -154,7 +188,7 @@ void PhoneBook::delAbonent()
 	vector<string> delList;
 	for (size_t i = 0; i < size; i++)
 	{
-		delList.push_back(to_string(i + 1) + abonents[i]->toString());
+		delList.push_back(to_string(i + 1) + abonents[i].toString());
 	}
 	int ind = Menu::select_vertical(delList, HorizontalAlignment::Left, 2);
 	delElemArray(abonents, size, ind);

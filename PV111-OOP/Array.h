@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include<iostream>
 #include<iomanip>
 
@@ -8,6 +8,7 @@ using namespace std;
 
 class Array
 {
+
 	int* arr;
 	int size;
 
@@ -52,4 +53,27 @@ public:
 		}
 		cout << endl;
 	}
+	
+	friend void printArrayInStarline(Array& arr);
 };
+
+
+void printArrayInStarline(Array& arr)
+{
+	int n = 3 * arr.size;
+	for (size_t i = 0; i < n; i++)
+	{
+		cout << "*";
+	}
+	cout << endl;
+	for (size_t i = 0; i < arr.size; i++)
+	{
+		cout << setw(3) << arr.arr[i];
+	}
+	cout << endl;
+	for (size_t i = 0; i < n; i++)
+	{
+		cout << "*";
+	}
+	cout << endl;
+}

@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include<iostream>
 
 using namespace std;
@@ -22,6 +22,7 @@ public:
 	void print();
 	char* get();
 	int length();
+	void clear();
 	static int getCount();
 };
 

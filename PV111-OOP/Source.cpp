@@ -5,6 +5,8 @@
 #include"PhoneBook.h"
 #include"Array.h"
 #include"../Library/String.h"
+#include"Friends.h"
+#include"Fraction.h"
 
 using namespace std;
 
@@ -27,15 +29,49 @@ int main()
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 
+	//////// 06.07.2022 /////
+
+	/*Array arr(10);
+	arr.set();
+	arr.print();
+	printArrayInStarline(arr);*/
+
+
+	/*Temperature t(35);
+	Humidity h(760);
+	WetherInformer(t, h);*/
+
+	//  ::, . , ?:, *, ->, 
+	// ++, --, +, - , !, ~
+	// =, +, -, *, /, %, +=, -=, *=, /=, %=, ==, <, >, <=, >=, !=, ||, &&, 
+
+	//Fraction f1(2, 5);
+	//Fraction f2(3, 7);
+	//Fraction f3 = f1.Sum(f2);
+	//Fraction f3 = f1 + f2; // f1.operator+(f2);
+	//f3 = -f1;
+	//f3 = f1++ + f2;
+	//(f1++).print();
+	//f1.print();
+
+
+	/*cout.setf(ios::showpos);
+	int v = 99;
+	cout << v << endl;*/
+
 
 	////// 30.06.2022 //////////
 
-	//String st;
-	//String st1(50);
-	//String st2("mama");
-	//String st3(st2);
+	/*String st;
+	st.print();
+	String st1(50);
+	st1.print();
+	String st2("mama");
+	st2.print();
+	String st3(st2);
+	st3.print();
 
-	//PRINT(st2);
+	PRINT(st2);*/
 
 	//{
 
@@ -53,6 +89,12 @@ int main()
 
 	//	//3
 	//	//Array arr3 = foo();
+	//	//Array arr3 = arr4;
+	//	//Array arr3;
+	//  //arr3 = arr2;
+	//	//arr3 = arr3 = arr2 = arr1;
+	// 
+	// 
 	//	//arr3.print();
 	//}
 

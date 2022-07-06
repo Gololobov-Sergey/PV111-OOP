@@ -136,6 +136,8 @@
     <ClInclude Include="..\Library\Menu.h" />
     <ClInclude Include="..\Library\String.h" />
     <ClInclude Include="Array.h" />
+    <ClInclude Include="Fraction.h" />
+    <ClInclude Include="Friends.h" />
     <ClInclude Include="PhoneBook.h" />
     <ClInclude Include="Point.h" />
     <ClInclude Include="Student.h" />
