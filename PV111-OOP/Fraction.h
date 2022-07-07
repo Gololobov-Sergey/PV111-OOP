@@ -39,6 +39,11 @@ public:
 		nom += den;
 		return temp;
 	}
+
+	bool operator<(Fraction f)
+	{
+		return (float)nom / den < (float)f.nom / f.den;
+	}
 };
 
 //Fraction operator+(Fraction f1, Fraction f2)

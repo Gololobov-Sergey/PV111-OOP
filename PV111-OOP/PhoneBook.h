@@ -11,7 +11,8 @@ class Abonent
 	char* info = nullptr;
 
 public:
-	Abonent() {}
+	Abonent():Abonent("No FIO", "No phone", "No info") {}
+	Abonent(const char* fio, const char* phone, const char* info);
 	Abonent(const Abonent& obj);
 	~Abonent();
 	Abonent& operator=(const Abonent& obj);
@@ -25,6 +26,12 @@ public:
 	string toString();
 };
 
+inline Abonent::Abonent(const char* fio, const char* phone, const char* info)
+{
+	setFIO(fio);
+	setPhone(phone);
+	setInfo(info);
+}
 
 Abonent& Abonent::operator=(const Abonent& obj)
 {

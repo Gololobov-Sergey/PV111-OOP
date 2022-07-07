@@ -28,14 +28,26 @@ int main()
 {
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
+	cout.setf(ios::boolalpha);
+
+
+
 
 	//////// 06.07.2022 /////
 
-	/*Array arr(10);
+	Array arr(10);
 	arr.set();
 	arr.print();
-	printArrayInStarline(arr);*/
+	printArrayInStarline(arr);
+	//cout << arr.getValueInd(5) << endl;
+	arr[4] = 99;
+	cout << arr["two"] << endl;
+	
 
+	Point p2(3, 6, 55);
+	p2.print();
+	p2(44, 77);
+	p2.print();
 
 	/*Temperature t(35);
 	Humidity h(760);
@@ -44,16 +56,17 @@ int main()
 	//  ::, . , ?:, *, ->, 
 	// ++, --, +, - , !, ~
 	// =, +, -, *, /, %, +=, -=, *=, /=, %=, ==, <, >, <=, >=, !=, ||, &&, 
+	// [], (), 
 
-	//Fraction f1(2, 5);
-	//Fraction f2(3, 7);
+	//Fraction f1(1, 5);
+	//Fraction f2(2, 5);
 	//Fraction f3 = f1.Sum(f2);
 	//Fraction f3 = f1 + f2; // f1.operator+(f2);
 	//f3 = -f1;
 	//f3 = f1++ + f2;
 	//(f1++).print();
 	//f1.print();
-
+	//cout << (f1 < f2) << endl;
 
 	/*cout.setf(ios::showpos);
 	int v = 99;
@@ -99,8 +112,8 @@ int main()
 	//}
 
 
-	PhoneBook phonebook;
-	phonebook.menu();
+	//PhoneBook phonebook;
+	//phonebook.menu();
 
 
 

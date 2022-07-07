@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include<iostream>
 #include<iomanip>
+#include<cassert>
 
 
 using namespace std;
@@ -54,6 +55,32 @@ public:
 		cout << endl;
 	}
 	
+	int& operator[](int ind)
+	{
+		assert(ind >= 0 && ind < size);
+		return arr[ind];
+	}
+
+	int& operator[](const char* name)
+	{
+		if (strcmp(name, "one") == 0)
+			return arr[0];
+		if (strcmp(name, "two") == 0)
+			return arr[1];
+	}
+
+	/*void setValueInd(int value, int ind)
+	{
+		if (ind >= 0 && ind < size)
+			arr[ind] = value;
+	}
+
+	int& getValueInd(int ind)
+	{
+		assert(ind >= 0 && ind < size);
+		return arr[ind];
+	}*/
+
 	friend void printArrayInStarline(Array& arr);
 };
 
