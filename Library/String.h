@@ -24,7 +24,25 @@ public:
 	int length();
 	void clear();
 	static int getCount();
+	String operator*(int n);
+
+	//// TODO
+	String operator+(String& str);
+	String operator+(const char* str);
+	String operator-(String& subStr);
+	String operator-(const char* subStr);
+	void operator+=(String& str);
+	void operator+=(const char* str);
+	char& operator[](int ind);
+	void operator()(String& str);
+	void operator()(const char* str);
+	String& operator=(const String& str);
+	//bool operator<=>(String& str);
+	//bool operator<=>(const char* str)
+	operator char* ();
+
 };
 
+String operator* (int n, String str);
 
 

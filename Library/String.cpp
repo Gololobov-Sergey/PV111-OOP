@@ -41,3 +41,19 @@ int String::getCount()
 {
 	return 0;
 }
+
+String String::operator*(int n)
+{
+	int len = this->size * n;
+	String temp(len);
+	for (size_t i = 0; i < n; i++)
+	{
+		strcat_s(temp.str, len+1, this->str);
+	}
+	return temp;
+}
+
+String operator*(int n, String str)
+{
+	return str * n;
+}

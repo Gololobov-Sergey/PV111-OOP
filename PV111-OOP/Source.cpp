@@ -35,19 +35,19 @@ int main()
 
 	//////// 06.07.2022 /////
 
-	Array arr(10);
-	arr.set();
-	arr.print();
-	printArrayInStarline(arr);
-	//cout << arr.getValueInd(5) << endl;
-	arr[4] = 99;
-	cout << arr["two"] << endl;
-	
+	//Array arr(10);
+	//arr.set();
+	//arr.print();
+	//printArrayInStarline(arr);
+	////cout << arr.getValueInd(5) << endl;
+	//arr[4] = 99;
+	//cout << arr["two"] << endl;
+	//
 
-	Point p2(3, 6, 55);
-	p2.print();
-	p2(44, 77);
-	p2.print();
+	//Point p2(3, 6, 55);
+	//p2.print();
+	//p2(44, 77);
+	//p2.print();
 
 	/*Temperature t(35);
 	Humidity h(760);
@@ -56,9 +56,9 @@ int main()
 	//  ::, . , ?:, *, ->, 
 	// ++, --, +, - , !, ~
 	// =, +, -, *, /, %, +=, -=, *=, /=, %=, ==, <, >, <=, >=, !=, ||, &&, 
-	// [], (), 
+	// [], (), type, 
 
-	//Fraction f1(1, 5);
+	Fraction f1(1, 5);
 	//Fraction f2(2, 5);
 	//Fraction f3 = f1.Sum(f2);
 	//Fraction f3 = f1 + f2; // f1.operator+(f2);
@@ -67,6 +67,9 @@ int main()
 	//(f1++).print();
 	//f1.print();
 	//cout << (f1 < f2) << endl;
+	float ff = f1;
+	//cout << f1 << endl;
+	int fff = f1;
 
 	/*cout.setf(ios::showpos);
 	int v = 99;
@@ -75,7 +78,7 @@ int main()
 
 	////// 30.06.2022 //////////
 
-	/*String st;
+	String st;
 	st.print();
 	String st1(50);
 	st1.print();
@@ -83,8 +86,8 @@ int main()
 	st2.print();
 	String st3(st2);
 	st3.print();
-
-	PRINT(st2);*/
+	(3 * st2).print(); // mamamamamama
+	//PRINT(st2);
 
 	//{
 

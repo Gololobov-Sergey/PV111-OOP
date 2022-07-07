@@ -44,6 +44,22 @@ public:
 	{
 		return (float)nom / den < (float)f.nom / f.den;
 	}
+
+	operator float()
+	{
+		return (float)nom / den;
+	}
+
+	operator int()
+	{
+		return nom / den;
+	}
+
+	//C++20
+	/*auto operator<=>(Fraction f)
+	{
+		return (float)nom / den <=> (float)f.nom / f.den;
+	}*/
 };
 
 //Fraction operator+(Fraction f1, Fraction f2)
