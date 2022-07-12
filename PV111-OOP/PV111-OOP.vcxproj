@@ -143,6 +143,7 @@
     <ClInclude Include="Point.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Time.h" />
+    <ClInclude Include="var.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

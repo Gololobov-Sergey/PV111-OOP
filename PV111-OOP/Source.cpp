@@ -7,6 +7,7 @@
 #include"../Library/String.h"
 #include"Friends.h"
 #include"Fraction.h"
+#include"var.h"
 
 using namespace std;
 
@@ -31,7 +32,31 @@ int main()
 	cout.setf(ios::boolalpha);
 
 
+	///// 12.07.2022 /////
 
+	/*int a;
+	cin >> a;
+	cin.ignore();
+	char buff[80];
+	cin.getline(buff, 80);*/
+
+	/*String st1("sdqcg");
+	String st2("rgfas34");
+	String st = st1 * st2;
+	cout << st << endl;*/
+	//st2.print();
+	//cout << st2 << endl;
+	//cin >> st2;
+	//cout << st2 << endl;
+
+	var a = 15;
+	var b = "Hello";
+	var c = 4.56;
+	cout << a << endl;
+	cout << b << endl;
+	cout << c << endl;
+	a = "120";
+	cout << a << endl;
 
 	//////// 06.07.2022 /////
 
@@ -58,7 +83,7 @@ int main()
 	// =, +, -, *, /, %, +=, -=, *=, /=, %=, ==, <, >, <=, >=, !=, ||, &&, 
 	// [], (), type, 
 
-	Fraction f1(1, 5);
+	//Fraction f1(1, 5);
 	//Fraction f2(2, 5);
 	//Fraction f3 = f1.Sum(f2);
 	//Fraction f3 = f1 + f2; // f1.operator+(f2);
@@ -67,9 +92,10 @@ int main()
 	//(f1++).print();
 	//f1.print();
 	//cout << (f1 < f2) << endl;
-	float ff = f1;
+	//float ff;
+	//ff = f1;
 	//cout << f1 << endl;
-	int fff = f1;
+	//int fff = f1;
 
 	/*cout.setf(ios::showpos);
 	int v = 99;
@@ -78,15 +104,15 @@ int main()
 
 	////// 30.06.2022 //////////
 
-	String st;
-	st.print();
-	String st1(50);
-	st1.print();
-	String st2("mama");
-	st2.print();
-	String st3(st2);
-	st3.print();
-	(3 * st2).print(); // mamamamamama
+	//String st;
+	//st.print();
+	//String st1(50);
+	//st1.print();
+	//String st2("mama");
+	//st2.print();
+	//String st3(st2);
+	//st3.print();
+	//(3 * st2).print(); // mamamamamama
 	//PRINT(st2);
 
 	//{

@@ -1,5 +1,6 @@
 #include "String.h"
 
+
 int String::count = 0;
 
 String::String(int size)
@@ -56,4 +57,37 @@ String String::operator*(int n)
 String operator*(int n, String str)
 {
 	return str * n;
+}
+
+ostream& operator<<(ostream& out, const String& str)
+{
+	out << str.str;
+	return out;
+}
+
+istream& operator>>(istream& in, String& str)
+{
+	char buff[1024];
+	in.getline(buff, 1024);
+	delete str.str;
+	str.size = strlen(buff);
+	str.str = new char[str.size + 1];
+	strcpy_s(str.str, str.size + 1, buff);
+	return in;
+}
+
+String String::operator*(const String& str)
+{
+	char buff[256];
+	int count = 0;
+	for (size_t i = 0; i < this->size; i++)
+	{
+		if (findKey(str.str, str.size, this->str[i]) != -1 &&
+			findKey(buff, count, this->str[i]) == -1)
+		{
+			buff[count++] = this->str[i];
+		}
+	}
+	buff[count] = '\0';
+	return String(buff);
 }
