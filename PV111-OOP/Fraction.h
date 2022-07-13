@@ -19,7 +19,9 @@ public:
 
 	Fraction operator+(Fraction f1)
 	{
-		return Fraction(0, 1);
+		int resNom = nom * f1.den + den * f1.nom;
+		int resDenom = den * f1.den;
+		return Fraction(resNom, resDenom);
 	}
 
 	Fraction operator-()

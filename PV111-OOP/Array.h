@@ -7,17 +7,19 @@
 using namespace std;
 
 
+
+template<class T>
 class Array
 {
 
-	int* arr;
+	T* arr;
 	int size;
 
 public:
 	Array() : Array(10) {}
 	explicit Array(int size) : size(size)
 	{
-		arr = new int[size];
+		arr = new T[size];
 		cout << "Constr" << endl;
 	}
 
@@ -30,7 +32,7 @@ public:
 	Array(const Array& obj)
 	{
 		size = obj.size;
-		arr = new int[size];
+		arr = new T[size];
 		for (size_t i = 0; i < size; i++)
 		{
 			arr[i] = obj.arr[i];
@@ -50,18 +52,18 @@ public:
 	{
 		for (size_t i = 0; i < size; i++)
 		{
-			cout << setw(3) << arr[i];
+			cout << setw(4) << arr[i];
 		}
 		cout << endl;
 	}
 	
-	int& operator[](int ind)
+	T& operator[](int ind)
 	{
 		assert(ind >= 0 && ind < size);
 		return arr[ind];
 	}
 
-	int& operator[](const char* name)
+	T& operator[](const char* name)
 	{
 		if (strcmp(name, "one") == 0)
 			return arr[0];
@@ -81,13 +83,24 @@ public:
 		return arr[ind];
 	}*/
 
-	friend void printArrayInStarline(Array& arr);
+	template<class T>
+	friend void printArrayInStarline(Array<T>& arr);
 };
 
 
-void printArrayInStarline(Array& arr)
+template<>
+void Array<double>::set(int min, int max)
 {
-	int n = 3 * arr.size;
+	for (size_t i = 0; i < size; i++)
+	{
+		arr[i] = (rand() % (10*max - 10*min + 1) + min)/10.;
+	}
+}
+
+template<class T>
+void printArrayInStarline(Array<T>& arr)
+{
+	int n = 4 * arr.size;
 	for (size_t i = 0; i < n; i++)
 	{
 		cout << "*";
@@ -95,7 +108,7 @@ void printArrayInStarline(Array& arr)
 	cout << endl;
 	for (size_t i = 0; i < arr.size; i++)
 	{
-		cout << setw(3) << arr.arr[i];
+		cout << setw(4) << arr.arr[i];
 	}
 	cout << endl;
 	for (size_t i = 0; i < n; i++)

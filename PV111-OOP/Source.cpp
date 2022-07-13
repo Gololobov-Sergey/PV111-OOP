@@ -8,6 +8,7 @@
 #include"Friends.h"
 #include"Fraction.h"
 #include"var.h"
+#include"Apple.h"
 
 using namespace std;
 
@@ -17,13 +18,13 @@ void PRINT(String a)
 }
 
 
-Array foo()
-{
-	Array arr(8);
-	arr.set();
-	arr.print();
-	return arr;
-}
+//Array foo()
+//{
+//	Array arr(8);
+//	arr.set();
+//	arr.print();
+//	return arr;
+//}
 
 int main()
 {
@@ -31,6 +32,35 @@ int main()
 	SetConsoleCP(1251);
 	cout.setf(ios::boolalpha);
 
+	///// 13.07.2022 //////
+
+	/*Fraction f1(1, 2);
+	Fraction f2(1, 4);
+	Fraction f3 = f1 + f2;
+	f3.print();*/
+
+
+	/*var a = 15;
+	var b = "120.25.36Hello0";
+	var c = 4.56;
+	cout << a << endl;
+	cout << b << endl;
+	cout << c << endl;
+	a = a + b;
+	cout << a << endl;*/
+
+	/*Apple a1(20, 0, 0, 0);
+	Apple a2(20, 255, 255, 255);
+	cout << a1 << endl;
+	cout << a2 << endl;
+	Apple a3 = a1 + a2;
+	cout << a3 << endl;*/
+
+
+	Array<double> a(15);
+	a.set();
+	a.print();
+	printArrayInStarline(a);
 
 	///// 12.07.2022 /////
 
@@ -49,14 +79,14 @@ int main()
 	//cin >> st2;
 	//cout << st2 << endl;
 
-	var a = 15;
+	/*var a = 15;
 	var b = "Hello";
 	var c = 4.56;
 	cout << a << endl;
 	cout << b << endl;
 	cout << c << endl;
 	a = "120";
-	cout << a << endl;
+	cout << a << endl;*/
 
 	//////// 06.07.2022 /////
 
