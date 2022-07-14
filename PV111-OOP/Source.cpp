@@ -32,6 +32,35 @@ int main()
 	SetConsoleCP(1251);
 	cout.setf(ios::boolalpha);
 
+	///// 14.07.2022 ///////
+
+	/*StaticArray<int, 8> arr;
+	for (size_t i = 0; i < arr.length(); i++)
+	{
+		arr[i] = rand() % 10;
+		cout << arr[i] << " ";
+	}
+	cout << endl;
+
+	StaticArray<float, 8> arr1;
+
+	StaticArray<bool, 8> arr2;
+
+	Repo8<int> r1;
+	Repo8<bool> rb;
+	for (size_t i = 0; i < 8; i++)
+	{
+		rb.set(rand()%2, i);
+	}
+	rb.print();
+
+	rb.set(1, 0);
+	rb.print();*/
+
+
+
+
+
 	///// 13.07.2022 //////
 
 	/*Fraction f1(1, 2);
@@ -57,10 +86,10 @@ int main()
 	cout << a3 << endl;*/
 
 
-	Array<double> a(15);
+	/*Array<double> a(15);
 	a.set();
 	a.print();
-	printArrayInStarline(a);
+	printArrayInStarline(a);*/
 
 	///// 12.07.2022 /////
 

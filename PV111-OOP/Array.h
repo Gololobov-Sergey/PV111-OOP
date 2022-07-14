@@ -117,3 +117,87 @@ void printArrayInStarline(Array<T>& arr)
 	}
 	cout << endl;
 }
+
+
+template<class T, int size>
+class StaticArray
+{
+	T arr[size];
+
+public:
+	int length() { return size; }
+
+	T& operator[](int ind)
+	{
+		return arr[ind];
+	}
+
+	void print()
+	{
+		for (size_t i = 0; i < size; i++)
+		{
+			cout << " " << arr[i];
+		}
+		cout << endl;
+	}
+};
+
+
+template<class T>
+class Repo8
+{
+	T arr[8];
+
+public:
+	int length() { return 8; }
+
+	T& operator[](int ind)
+	{
+		return arr[ind];
+	}
+
+	void print()
+	{
+		for (size_t i = 0; i < 8; i++)
+		{
+			cout << " " << arr[i];
+		}
+		cout << endl;
+	}
+};
+
+
+
+template<>
+class Repo8<bool>
+{
+	unsigned char data = 0;
+
+public:
+	void set(bool value, int ind)
+	{
+		unsigned char mask = 1 << ind;
+		if (value)
+			data |= mask;
+		else
+			data &= ~mask;
+	}
+
+	bool get(int ind)
+	{
+		unsigned char mask = 1 << ind;
+		return (data & mask) != 0;
+	}
+
+	void print()
+	{
+		unsigned char mask = 1;
+		for (size_t i = 0; i < 8; i++)
+		{
+			cout << " " << ((data & mask) != 0);
+			mask <<= 1;
+		}
+		cout << endl;
+	}
+
+};
