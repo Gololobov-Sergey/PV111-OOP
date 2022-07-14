@@ -34,7 +34,7 @@ int main()
 
 	///// 14.07.2022 ///////
 
-	/*StaticArray<int, 8> arr;
+	/*StaticArray<int, 8> arr = {1,2,3,4,5,6,7,8};
 	for (size_t i = 0; i < arr.length(); i++)
 	{
 		arr[i] = rand() % 10;
@@ -57,8 +57,30 @@ int main()
 	rb.set(1, 0);
 	rb.print();*/
 
+	string d = "";
+	cout << sizeof(d) << endl;
+	string s("mama");
+	cout << s.capacity() << endl;
+	string s1 = "mama";
+	s.append("+papatttttttttyyyyyyy7777777777777yyy");
+	cout << s << endl;
+	cout << s.capacity() << endl;
+	cout << s.length() << endl;
+	cout << s.size() << endl;
+	cout << s.max_size() << endl;
+	cout << endl;
+	s.replace(s.begin(), s.begin() + 20, 1, '0');
+	cout << s.size() << endl;
+	cout << s.capacity() << endl;
 
+	s.shrink_to_fit();
+	cout << s.capacity() << endl;
 
+	cout << s.substr(2, 6) << endl;
+
+	
+	
+	
 
 
 	///// 13.07.2022 //////
