@@ -9,6 +9,8 @@
 #include"Fraction.h"
 #include"var.h"
 #include"Apple.h"
+#include"../Library/StaticStack.h"
+#include"../Library/Stack.h"
 
 using namespace std;
 
@@ -31,6 +33,31 @@ int main()
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 	cout.setf(ios::boolalpha);
+
+	///// 19.07.2022 ///////////
+
+	Stack<char, 5> st;
+	
+
+	st.print();
+	st.push(10);
+	st.push(5);
+	st.push(20);
+	st.print();
+	cout << st.peek() << endl;
+	st.pop();
+	st.print();
+	st.push(50);
+	st.push(50);
+	st.push(50);
+	st.push(50);
+	st.push(50);
+	st.push(50);
+	st.print();
+
+	Stack<char, 5> st1(st);
+	st1.print();
+
 
 	///// 14.07.2022 ///////
 
@@ -57,7 +84,7 @@ int main()
 	rb.set(1, 0);
 	rb.print();*/
 
-	string d = "";
+	/*string d = "";
 	cout << sizeof(d) << endl;
 	string s("mama");
 	cout << s.capacity() << endl;
@@ -76,7 +103,7 @@ int main()
 	s.shrink_to_fit();
 	cout << s.capacity() << endl;
 
-	cout << s.substr(2, 6) << endl;
+	cout << s.substr(2, 6) << endl;*/
 
 	
 	

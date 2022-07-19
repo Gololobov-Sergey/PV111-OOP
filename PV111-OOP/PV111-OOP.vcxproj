@@ -135,9 +135,11 @@
   <ItemGroup>
     <ClInclude Include="..\Library\Functions.h" />
     <ClInclude Include="..\Library\Menu.h" />
+    <ClInclude Include="..\Library\StaticStack.h" />
     <ClInclude Include="..\Library\String.h" />
     <ClInclude Include="Apple.h" />
     <ClInclude Include="Array.h" />
+    <ClInclude Include="DynamicStack.h" />
     <ClInclude Include="Fraction.h" />
     <ClInclude Include="Friends.h" />
     <ClInclude Include="Matrix.h" />

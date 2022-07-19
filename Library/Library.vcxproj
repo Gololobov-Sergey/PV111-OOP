@@ -127,8 +127,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Data.h" />
     <ClInclude Include="Functions.h" />
     <ClInclude Include="Menu.h" />
+    <ClInclude Include="Stack.h" />
+    <ClInclude Include="StaticStack.h" />
     <ClInclude Include="String.h" />
   </ItemGroup>
   <ItemGroup>
