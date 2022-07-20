@@ -11,6 +11,7 @@
 #include"Apple.h"
 #include"../Library/StaticStack.h"
 #include"../Library/Stack.h"
+#include"../Library/Queue.h"
 
 using namespace std;
 
@@ -34,9 +35,48 @@ int main()
 	SetConsoleCP(1251);
 	cout.setf(ios::boolalpha);
 
+
+	///// 20.07.2022 ///////
+
+
+	/*Queue<int> q = { 2,5,4,4,6 };
+	q.print();
+	q.enqueue(100);
+	q.enqueue(200);
+	q.enqueue(300);
+	q.print();
+
+	Queue<int> q2(q);
+	q2.print();
+	q2.ring();
+	q2.print();
+
+	q.dequeue();
+	q.dequeue();
+	q.dequeue();
+	q.print();
+	cout << q.peek() << endl;
+	q.clear();
+	q.print();
+	q2.print();*/
+
+
+	PriorityQueue<int> q;
+	q.enqueue(20, PRIORITY::MEDIUM);
+	q.enqueue(40, PRIORITY::LOW);
+	q.enqueue(30, PRIORITY::HIGH);
+	q.enqueue(50, PRIORITY::HIGH);
+	q.enqueue(10, PRIORITY::SUPERHIGH);
+	q.enqueue(100, PRIORITY::LOW);
+	q.print();
+	q.dequeue();
+	q.dequeue();
+	q.print();
+
+
 	///// 19.07.2022 ///////////
 
-	Stack<char, 5> st;
+	/*Stack<char, 5> st;
 	
 
 	st.print();
@@ -56,7 +96,7 @@ int main()
 	st.print();
 
 	Stack<char, 5> st1(st);
-	st1.print();
+	st1.print();*/
 
 
 	///// 14.07.2022 ///////

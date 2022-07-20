@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClInclude Include="..\Library\Functions.h" />
     <ClInclude Include="..\Library\Menu.h" />
+    <ClInclude Include="..\Library\Queue.h" />
     <ClInclude Include="..\Library\StaticStack.h" />
     <ClInclude Include="..\Library\String.h" />
     <ClInclude Include="Apple.h" />
