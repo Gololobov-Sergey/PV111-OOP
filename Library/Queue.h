@@ -2,6 +2,7 @@
 #include"Data.h"
 #include<initializer_list>
 #include<cassert>
+#include"../Library/Functions.h"
 
 using namespace std;
 
@@ -13,6 +14,7 @@ class Queue
 	size_t   size  = 0;
 
 public:
+	Queue();
 	Queue(initializer_list<T> init);
 	~Queue();
 	Queue(const Queue& q);
@@ -24,8 +26,14 @@ public:
 	bool isEmpty() const;
 	void clear();
 	void print() const;
+	void print(int x, int y) const;
 	void ring();
 };
+
+template<class T>
+Queue<T>::Queue()
+{
+}
 
 template<class T>
 Queue<T>::Queue(initializer_list<T> init)
@@ -127,6 +135,40 @@ void Queue<T>::print() const
 	while (temp)
 	{
 		cout << temp->value << " ";
+		temp = temp->next;
+	}
+	cout << endl;
+}
+
+template<class T>
+void Queue<T>::print(int x, int y) const
+{
+	int dy = y;
+	Data<T>* temp = first;
+	for (size_t i = 0; i < size; i++)
+	{
+		
+		if (size <= 10)
+		{
+			gotoxy(x, dy++);
+			cout << temp->value;
+		}
+		else
+		{
+			if (i < size - 10)
+			{
+				if (i == size - 10)
+				{
+					gotoxy(x, dy++);
+					cout << "........^........" << endl;
+				}
+			}
+			else
+			{
+				gotoxy(x, dy++);
+				cout << temp->value;
+			}
+		}
 		temp = temp->next;
 	}
 	cout << endl;
@@ -276,7 +318,7 @@ void PriorityQueue<T>::print() const
 	Data<T>* temp = first;
 	while (temp)
 	{
-		cout << temp->value << " ";
+		cout << temp->value << endl;
 		temp = temp->next;
 	}
 	cout << endl;

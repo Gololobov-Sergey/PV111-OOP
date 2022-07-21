@@ -146,6 +146,7 @@
     <ClInclude Include="Matrix.h" />
     <ClInclude Include="PhoneBook.h" />
     <ClInclude Include="Point.h" />
+    <ClInclude Include="PrintServer.h" />
     <ClInclude Include="Student.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="var.h" />

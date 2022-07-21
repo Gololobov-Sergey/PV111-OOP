@@ -12,6 +12,7 @@
 #include"../Library/StaticStack.h"
 #include"../Library/Stack.h"
 #include"../Library/Queue.h"
+#include"PrintServer.h"
 
 using namespace std;
 
@@ -34,6 +35,27 @@ int main()
 	SetConsoleOutputCP(1251);
 	SetConsoleCP(1251);
 	cout.setf(ios::boolalpha);
+
+	//// 21.07.2022 /////
+
+	string dep[] = { "Admin", "Economist", "Transport", "HR" };
+	string file[] = {"file1.doc", "file2.pdf", "file3.xls", "file4.txt", "file5.ppt"};
+
+	PrintServer ps("192.168.0.102");
+
+	int i = 0;
+	while (true)
+	{
+		int m = rand() % 5+5;
+		if (i % m == 0)
+		{
+			ps.addTaskPrint(TaskPrint(dep[rand() % 4], file[rand() % 5], rand() % 5 + 1));
+		}
+		ps.work();
+		i++;
+		Sleep(100);
+	}
+	
 
 
 	///// 20.07.2022 ///////
@@ -61,7 +83,7 @@ int main()
 	q2.print();*/
 
 
-	PriorityQueue<int> q;
+	/*PriorityQueue<int> q;
 	q.enqueue(20, PRIORITY::MEDIUM);
 	q.enqueue(40, PRIORITY::LOW);
 	q.enqueue(30, PRIORITY::HIGH);
@@ -71,7 +93,7 @@ int main()
 	q.print();
 	q.dequeue();
 	q.dequeue();
-	q.print();
+	q.print();*/
 
 
 	///// 19.07.2022 ///////////
